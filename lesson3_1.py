@@ -1,0 +1,5 @@
+word_1, word_2 = input("Введите 2 слова: \n").split()
+print("!%s ! %s!" % (word_2, word_1))
+print("!{} ! {}!".format(word_2, word_1))
+print(f"!{word_2} ! {word_1}!")
+print("!"+word_2+" ! "+word_1+"!")
