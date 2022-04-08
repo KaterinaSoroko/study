@@ -5,12 +5,13 @@ name = input("Как Вас зовут? \n")
 while name == "" or not name.isalpha():
     print("Вы не ввели имя. Давайте повторим.")
     name = input("Как Вас зовут? \n")
-print(f"Здравствуй, {name}. Я загадаю число от 1 до 100, попробуй угадать. Я буду подсказывать.")
+print(f"Здравствуй, {name}. Я загадаю число от 1 до 100, попробуй угадать. \n"
+      f"У Вас 10 попыток. Я буду подсказывать.")
 
 while True:
     number = randint(1, 100)
     print("Загадал!")
-    num = -1
+    num = None
     count = 0
     while num != number:
         num_str = input("Ваш вариант: \n")
@@ -26,6 +27,9 @@ while True:
             print("Ваше число больше загаданного")
         elif num < number:
             print("Ваше число меньше загаданного")
+        if count >= 10 and num != number:
+            print("Вы исчерпали число попыток и не угадали число")
+            break
     else:
         print(f"Правильно! Я загадал число {number}. Вы угадали с {count} раза.")
     flag = input("Хотите сыграть еще? (Y, Д / N, Н): \n")
